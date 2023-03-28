@@ -3,22 +3,52 @@ body {
     color:midnightblue;
     font-family:Arial;
     margin:0px;"
+    transition: 600ms 5s;
 }
 
-header{
+body:hover {
+    background-color: LightBlue;
+    text-decoration: underline;
+    font-family: Lucida;
+    margin: 0px;
+    transition: 5s 300ms;
+}
+
+header {
     background-image:linear-gradient(to right bottom, yellow, blueviolet, fuchsia, aqua );
     color:lavenderblush;
     padding: 10px;
     font-size: 16pt;
+    transition: 600ms 5s;
+}
+header:hover {
+    background-image:linear-gradient(to right bottom, green, red, orange, blue );
+    text-decoration: underline;
+    background-color:white;
+    font-weight: bolder;
+    opacity:1;
+    transition: 5s 300ms;
+
 }
 
-footer{
+footer {
     background-color:black;
     color:palevioletred;
     padding: 11px;
     font-size: 15pt;
     font-style: italic;
-    text-align: right
+    text-align: right;
+    transition: 600ms 5s;
+
+}
+
+footer:hover{
+    background-color: blueviolet;
+    text-decoration: underline;
+    background-color:lavender;
+    font-weight: bolder;
+    opacity:1;
+    transition: 5s 300ms;
 }
 
 a{
