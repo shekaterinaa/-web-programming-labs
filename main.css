@@ -6,8 +6,8 @@ body {
 }
 
 header{
-    background-color:black;
-    color:blueviolet;
+    background-image:linear-gradient(to right bottom, yellow, blueviolet, fuchsia, aqua );
+    color:lavenderblush;
     padding: 10px;
     font-size: 16pt;
 }
