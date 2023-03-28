@@ -4,3 +4,40 @@ body {
     font-family:Arial;
     margin:0px;"
 }
+
+header{
+    background-color:black;
+    color:blueviolet;
+    padding: 10px;
+    font-size: 16pt;
+}
+
+footer{
+    background-color:black;
+    color:palevioletred;
+    padding: 11px;
+    font-size: 15pt;
+    font-style: italic;
+    text-align: right
+}
+
+a{
+    text-decoration:none;
+    color: green;
+}
+
+a:visited{
+    color:blueviolet;
+}
+
+a:hover{
+    color:red;
+    text-decoration: underline;
+    background-color:white;
+    font-weight: bold;
+}
+
+a:active{
+    color:fuchsia;
+    background-color: green;
+}
