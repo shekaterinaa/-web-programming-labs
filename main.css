@@ -20,6 +20,11 @@ header {
     padding: 10px;
     font-size: 16pt;
     transition: 600ms 5s;
+
+}
+
+main {
+    margin: 10px 20px;
 }
 header:hover {
     background-image:linear-gradient(to right bottom, green, red, orange, blue );
