@@ -52,6 +52,12 @@
         alert( author);
     }
 
+    function changeOutput(buttonNum,backColor,textColor){
+        let output=document.getElementById('output');
+        output.innerHTML='нажата кнопка 1';
+        output.style.backgroundColor=backColor;
+        output.style.color=textColor;
+    }
     showSum();
     showRaz();
     showPro();
@@ -70,8 +76,14 @@
             background: lightgreen;
         }
 
-    </style>
+        #output {
+            border: 1px;
+            width: 300px;
+            height:40px;
+        }
 
+    </style>
+   
 </head>
 
 <body>
@@ -87,6 +99,15 @@
         <div class="message" onclick="showPro()">Найти произведение</div>
         <div class="message" onclick="showDel()">Найти частное</div>
         <div class="message" onclick="showAuthor()">Узнать,кто автор страницы</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1,'red','yellow')"> 
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2,'violent','green')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3,'orange','blue')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4,'white','black')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer onclick="showAuthor()">
