@@ -52,16 +52,38 @@
         alert( author);
     }
 
-    function changeOutput(buttonNum,backColor,textColor){
-        let output=document.getElementById('output');
-        output.innerHTML='нажата кнопка 1';
-        output.style.backgroundColor=backColor;
-        output.style.color=textColor;
+    function changeOutput(buttonNum, backColor, textColor, border) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderBlock = border;
+            output.style.borderInline = border;
     }
-    showSum();
-    showRaz();
-    showPro();
-    showDel();
+
+    
+    function changeRaschet() {
+            let input1 = document.getElementById('number1');
+            let input2 = document.getElementById('number2');
+            let input3 = document.getElementById('number3');
+            let input4 = document.getElementById('number4');
+            
+            let resultat = document.getElementById('resultat');
+            let a = 90;
+            let b = 69;
+            let c = 45;
+            let d = 87;
+            
+            let a1 = parseInt(input1.value);
+            let b2 = parseInt(input2.value);
+            let c3 = parseInt(input3.value);
+            let d4 = parseInt(input4.value);
+            let result = a*a1+b*b2+c*c3+d*d4;
+            resultat.innerHTML = 'Общая цена: ' + result + ' p';
+
+        }
+
+   
     </script>
     <style>
         .message {
@@ -77,14 +99,21 @@
         }
 
         #output {
-            border: 1px;
             width: 300px;
-            height:40px;
+            height: 40px;
         }
-
-    </style>
    
+        .korzina {
+            border: 2px solid yellowgreen;
+            border-radius: 5px;
+            width: 400px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+    
+    </style>   
 </head>
+
 
 <body>
     <header onclick="showAuthor()">
@@ -99,6 +128,7 @@
         <div class="message" onclick="showPro()">Найти произведение</div>
         <div class="message" onclick="showDel()">Найти частное</div>
         <div class="message" onclick="showAuthor()">Узнать,кто автор страницы</div>
+       
 
         <div>
             <input type="button" value="Кнопка 1" onclick="changeOutput(1,'red','yellow')"> 
@@ -108,6 +138,17 @@
         </div>
 
         <div id="output"></div>
+
+        <div class = 'korzina'>
+            <h2>Корзина</h2>
+            <label>Яблоки (90р/шт): <br><input type="number" value="0" min="0" id="number1"></label><br>
+            <label>Груши (69р/шт): <br><input type="number" value="0" min="0" id="number2"></label><br>
+            <label>Апельсины (45р/шт): <br><input type="number" value="0" min="0" id="number3"></label><br>
+            <label>Арбузы (87р/шт): <br><input type="number" value="0" min="0" id="number4"></label><br>
+            <input type="button" value="Рассчитать" onclick="changeRaschet()">
+            <p id="resultat"></p>
+
+        
     </main>
 
     <footer onclick="showAuthor()">
