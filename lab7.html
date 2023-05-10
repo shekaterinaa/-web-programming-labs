@@ -8,12 +8,25 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <script>
+        function addBlocks(){
+            let block=documents.createElement('div');
+            block.innerHTML='Блок №1';
+
+            let block=documents.getElementById('blocks');
+            blocks.appendChild(block);
+        }
+
+    </script>
+
     <header>
         НГТУ,ФБ, Лабораторная 7
     </header>
 
  
     <main>
+        <button onclick="addBlocks()">Создать блоки</button>
+        <div id="blocks"></div>
 
     </main>
 
