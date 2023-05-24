@@ -9,14 +9,15 @@
 </head>
 <body>
     <script>
-        function addBlocks(){
-            let block=documents.createElement('div');
-            block.innerHTML='Блок №1';
-
-            let block=documents.getElementById('blocks');
-            blocks.appendChild(block);
+        function addBlocks() {
+            let blocks = document.getElementById('blocks');
+            for (let i=0; i<10; i++) {
+                let block = document.createElement('div');
+                block.innerHTML = 'Блок №' + (i+1) + ': ' + (2*i**2);
+               
+                blocks.appendChild(block);
+            }
         }
-
     </script>
 
     <header>
