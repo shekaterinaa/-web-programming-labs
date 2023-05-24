@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Шкуропатова Екатерина Александровна. Лабораторная 7</title>
     <link rel="stylesheet" href="main.css">
-</head>
+
     <style>
         .opacityBlock {
             border: 3px solid red;
-            width: 350px;
-            margin: 25px;
+            width: 370px;
+            margin: 28px;
             padding: 10px;
             text-align: center;
             background-color: pink;
@@ -93,15 +93,58 @@
                 blocks.appendChild(block)
             }
         }
-        
-    </script>
 
+        function stockPrice() {
+            let date = ['26.04.2023', '28.04.2023', '02.05.2023', '04.05.2023', '05.05.2023',
+                        '10.05.2023', '11.05.2023', '15.05.2023', '19.05.2023','22.05.2023'];
+            let x1=663.21; let x2=653.73; let x3=646.645; let x4=650; let x5=636.681;
+            let x6=682.72; let x7=668.83; let x8=686.15; let x9=617.85; let x10=592.412;
+            let price = [x1, x2, x3, x4, x5, x6, x7, x8, x9, x10];
+            let diff = ['-', (x1-x2).toFixed(2), (x2-x3).toFixed(2), (x3-x4).toFixed(2), (x4-x5).toFixed(2),
+                        (x5-x6).toFixed(2), (x6-x7).toFixed(2), (x7-x8).toFixed(2), (x8-x9).toFixed(2),(x9-x10).toFixed(2)];
+            let table = document.getElementById('stock-price');
+           
+            for (let i = 0; i < date.length; i++) {
+                let tr = document.createElement('tr');
+                let td1 = document.createElement('td');
+                let td2 = document.createElement('td');
+                let td3 = document.createElement('td');
+                td1.innerHTML = date[i];
+                td2.innerHTML = price[i];
+                td3.innerHTML = diff[i];
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                table.appendChild(tr);    
+            }
+
+            let sum=0;
+            for (let i = 0; i < price.length; i++) {
+                sum = sum + price[i];
+            }
+            let average = sum / price.length;
+            document.getElementById('average-price').innerHTML = 'Среднее значение: ' + average;
+
+            let max = 0;
+            let min = price[0];
+            for (let i = 0; i < price.length; i++) {
+                if (max<price[i]) {
+                    max = price[i];
+                }
+                else if (min>price[i]) {
+                    min = price[i];
+                    }
+            }
+            document.getElementById('min').innerHTML = 'Минимальное значение: ' + min;
+            document.getElementById('max').innerHTML = 'Максимальное значение: ' + max;
+        }
+    </script>
+</head>
+<body>
     <header>
-    <body>  
-        НГТУ,ФБ, Лабораторная 7
+        НГТУ, ФБ, Лабораторная работа 7
     </header>
 
- 
     <main>
         <button onclick="addBlocks()">Создать блоки</button>
         <div id="blocks"></div>
@@ -120,10 +163,15 @@
         <button onclick="multiplicationTable()">Таблица умножения на 55</button>
         <div id="blocksTab"></div>
 
+        <button onclick="stockPrice()">Курс акций Полиметалл</button>
+        <table border="1" id="stock-price"></table>
+        <div id="average-price"></div>
+        <div id="min"></div>
+        <div id="max"></div>
     </main>
 
-<footer>
-    &copy; Шкуропатова Екатерина, ФБИ-13, 2 курс, 2023
-</footer> 
+    <footer>
+        &copy; Шкуропатова Екатерина, ФБИ-13, 2 курс, 2023
+    </footer>
 </body>
 </html>
